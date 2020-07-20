@@ -5,18 +5,17 @@
 - The main goal is to compare classification accuracies for the 6 tested classifiers. 
 
 ## Dependencies
-- Anaconda 2 with Python 2.7. (Python 3.6 not tested yet)
 - Librosa (audio loading, audio visualization and feature extraction)
 - Sci-kit learn
 - Keras (Theano backend)
 - Numpy, Matplotlib
 - Pandas (data visualization)
 
-## Jupyter Notebook
-A Jupyter Notebook (Python 2.7 Kernel) is added to illustrate the workflow. 
+## Google Colab Notebook
+A Google Colab Notebook (Python 3.7 Kernel) is added to illustrate the workflow. 
 
 The scripts for feature extraction and classification have been added as 
-```.py``` files and are all loaded in the Jupyter Notebook sequentally.
+```.ipynb``` files and are all loaded in the Jupyter Notebook sequentally.
 
 Running ```feature_extraction.py``` creates a numpy array for features (```feature.npy```) and one for labels (```label.npy```).
 These files will be saved in the current directory.
@@ -29,23 +28,25 @@ These files will be saved in the current directory.
 - Spectral contrast
 
 ### Classifiers implemented
-- Support Vector Machine (SVM)
-- Random Forest (RF)
-- Naive Bayes (NB)
 - Convolutional Neural Network (CNN)
 - Multilayer Perceptron (MLP)
 - Recurrent Neural Network (RNN)
+- Support Vector Machine (SVM)
+- Random Forest (RF)
+- Naive Bayes (NB)
+- KNearestNeighbors(KNN)
+
 
 ### Accuracies obtained
-**Note**: Direct comparison between classifiers can't be donde yet since their parameters haven't been tuned to optimize
+**Note**: Direct comparison between classifiers can't be done yet since their parameters haven't been tuned to optimize
 accuracy yet. Out of 400 audio samples, the test set consisted on the 33% of this.
+- CNN: 78.125% (100 epochs)
+- MLP: 79.125 (100 epochs)
+- RNN: 72% (100 epochs)
 - SVM: 81.7%
-- RF: 80%
+- RF: 83%
 - NB: 69.7%
-- CNN: 71.25% (100 epochs)
-- MLP: 63.125 (100 epochs)
-- RNN: 66% (100 epochs)
-
+- KNN: 67%
 ### Approaches to improve accuracy
 - Compute other features: MFCC + ZCR features improve classification 
 [accuracy](https://workshop2016.iwslt.org/downloads/IWSLT_2016_paper_3.pdf)
